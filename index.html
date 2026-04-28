@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière — Artisan Candle Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="header-eyebrow">Handcrafted · Mold-Cast · Artisan</p>
+      <h1 class="site-title">Lumière</h1>
+      <p class="site-subtitle">A curated collection of decorative candles</p>
+    </div>
+    <div class="header-ornament"></div>
+  </header>
+
+  <!-- Filter bar -->
+  <nav class="filter-bar" aria-label="Filter by collection">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="big-rose">Big Rose</button>
+    <button class="filter-btn" data-filter="sacred">Sacred Figure</button>
+  </nav>
+
+  <!-- Catalog grid -->
+  <main class="catalog-grid" id="catalog">
+
+    <!-- Big Rose – Pink -->
+    <article class="product-card" data-category="big-rose" style="--accent: #e8a99a;">
+      <div class="card-image-wrap">
+        <img src="images/br-pink-crop.png" alt="Big Rose candle in Pink" class="card-img" loading="lazy" />
+        <span class="card-badge">Big Rose</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-name">Rosa · Pink</h2>
+        <p class="card-desc">A blush-soft rose cast in silky wax — gentle warmth for intimate spaces.</p>
+        <div class="card-swatch" style="background:#e8a99a;"></div>
+      </div>
+    </article>
+
+    <!-- Big Rose – Sage -->
+    <article class="product-card" data-category="big-rose" style="--accent: #a8c8b8;">
+      <div class="card-image-wrap">
+        <img src="images/br-sage-crop.png" alt="Big Rose candle in Sage" class="card-img" loading="lazy" />
+        <span class="card-badge">Big Rose</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-name">Rosa · Sage</h2>
+        <p class="card-desc">Muted celadon petals — the tranquility of a garden at dawn.</p>
+        <div class="card-swatch" style="background:#a8c8b8;"></div>
+      </div>
+    </article>
+
+    <!-- Big Rose – Warm Sand -->
+    <article class="product-card" data-category="big-rose" style="--accent: #c8aa8a;">
+      <div class="card-image-wrap">
+        <img src="images/br-warm-sand-crop.png" alt="Big Rose candle in Warm Sand" class="card-img" loading="lazy" />
+        <span class="card-badge">Big Rose</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-name">Rosa · Warm Sand</h2>
+        <p class="card-desc">Sun-warmed dunes softened into wax — understated and refined.</p>
+        <div class="card-swatch" style="background:#c8aa8a;"></div>
+      </div>
+    </article>
+
+    <!-- Big Rose – Velvet -->
+    <article class="product-card" data-category="big-rose" style="--accent: #c06090;">
+      <div class="card-image-wrap">
+        <img src="images/br-velvet-crop.png" alt="Big Rose candle in Velvet" class="card-img" loading="lazy" />
+        <span class="card-badge">Big Rose</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-name">Rosa · Velvet</h2>
+        <p class="card-desc">Deep mauve richness — bold and romantic, like dusk in full bloom.</p>
+        <div class="card-swatch" style="background:#c06090;"></div>
+      </div>
+    </article>
+
+    <!-- Mother Maria Praying – White -->
+    <article class="product-card product-card--featured" data-category="sacred" style="--accent: #d4c8b8;">
+      <div class="card-image-wrap">
+        <img src="images/mrp-white-crop.png" alt="Mother Maria Praying candle in White" class="card-img" loading="lazy" />
+        <span class="card-badge">Sacred Figure</span>
+      </div>
+      <div class="card-body">
+        <h2 class="card-name">Maria Orante · White</h2>
+        <p class="card-desc">Our Lady in eternal prayer — pure ivory wax rendered with devotional grace. A sacred presence for altar and home chapel alike.</p>
+        <div class="card-swatch" style="background:#f0ece6; border: 1px solid #c8c0b4;"></div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>Lumière Artisan Candles &nbsp;·&nbsp; <em>Crafted with wax &amp; intention</em></p>
+  </footer>
+
+  <script src="js/catalog.js"></script>
+</body>
+</html>

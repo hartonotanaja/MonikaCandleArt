@@ -1,0 +1,310 @@
+/* =============================================
+   Lumière Catalog — style.css
+   Aesthetic: Refined editorial / luxury minimal
+   ============================================= */
+
+/* ── Custom Properties ─────────────────────── */
+:root {
+  --cream:       #f7f3ee;
+  --parchment:   #ede7de;
+  --ink:         #1e1a16;
+  --ink-muted:   #6b6358;
+  --gold:        #b89860;
+  --gold-light:  #d4b880;
+  --white:       #ffffff;
+  --card-bg:     #ffffff;
+  --shadow-soft: 0 4px 24px rgba(30,26,22,.08);
+  --shadow-lift: 0 12px 40px rgba(30,26,22,.14);
+  --radius:      4px;
+  --transition:  0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-size: 16px;
+}
+
+/* ── Reset ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; }
+
+/* ── Header ────────────────────────────────── */
+.site-header {
+  position: relative;
+  text-align: center;
+  padding: 5rem 2rem 3.5rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(184,152,96,.12) 0%, transparent 70%),
+    var(--cream);
+}
+
+.header-inner { position: relative; z-index: 1; }
+
+.header-eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+}
+
+.site-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 300;
+  letter-spacing: .12em;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: .8rem;
+}
+
+.site-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-muted);
+  letter-spacing: .04em;
+}
+
+/* Decorative horizontal rule with ornament */
+.header-ornament {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+  margin-top: 3rem;
+  position: relative;
+}
+.header-ornament::before {
+  content: '✦';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--cream);
+  color: var(--gold);
+  font-size: .6rem;
+  padding: 0 .75rem;
+  letter-spacing: .1em;
+}
+
+/* ── Filter Bar ────────────────────────────── */
+.filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+  padding: 2.5rem 2rem 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--parchment);
+  color: var(--ink-muted);
+  font-size: .7rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  padding: .5rem 1.4rem;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+.filter-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.filter-btn.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+}
+
+/* ── Catalog Grid ──────────────────────────── */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 5rem;
+}
+
+/* ── Product Card ──────────────────────────── */
+.product-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp .55s ease forwards;
+}
+.product-card:nth-child(1) { animation-delay: .05s; }
+.product-card:nth-child(2) { animation-delay: .12s; }
+.product-card:nth-child(3) { animation-delay: .19s; }
+.product-card:nth-child(4) { animation-delay: .26s; }
+.product-card:nth-child(5) { animation-delay: .33s; }
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lift);
+}
+
+/* Featured card spans wider */
+.product-card--featured {
+  grid-column: span 1;
+}
+@media (min-width: 900px) {
+  .product-card--featured {
+    grid-column: span 2;
+    flex-direction: row;
+  }
+  .product-card--featured .card-image-wrap {
+    width: 48%;
+    flex-shrink: 0;
+  }
+  .product-card--featured .card-img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .product-card--featured .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem 2.5rem;
+  }
+}
+
+/* Image area */
+.card-image-wrap {
+  position: relative;
+  background: #1a1714;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+.product-card--featured .card-image-wrap {
+  aspect-ratio: auto;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform .6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-card:hover .card-img {
+  transform: scale(1.04);
+}
+
+/* Accent color overlay on hover */
+.card-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent, #b89860);
+  opacity: 0;
+  transition: opacity var(--transition);
+  mix-blend-mode: soft-light;
+}
+.product-card:hover .card-image-wrap::after {
+  opacity: .25;
+}
+
+/* Badge */
+.card-badge {
+  position: absolute;
+  top: .9rem;
+  left: .9rem;
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: rgba(30,26,22,.55);
+  backdrop-filter: blur(6px);
+  padding: .3rem .75rem;
+  border-radius: 2px;
+}
+
+/* Card body */
+.card-body {
+  padding: 1.6rem 1.5rem 1.8rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  border-top: 2px solid var(--accent, #b89860);
+}
+
+.card-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: .02em;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.card-desc {
+  font-size: .82rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* Color swatch dot */
+.card-swatch {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  margin-top: .4rem;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+
+/* ── Footer ────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2.5rem 2rem 3rem;
+  border-top: 1px solid var(--parchment);
+  font-size: .78rem;
+  color: var(--ink-muted);
+  letter-spacing: .06em;
+}
+.site-footer em {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--gold);
+  font-size: .9rem;
+}
+
+/* ── Hidden state (filter) ─────────────────── */
+.product-card.is-hidden {
+  display: none;
+}
+
+/* ── Animation ─────────────────────────────── */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 640px) {
+  .site-header { padding: 3.5rem 1.25rem 2.5rem; }
+  .catalog-grid { padding: 1.5rem 1.25rem 4rem; gap: 1.25rem; }
+  .filter-bar { padding: 2rem 1.25rem .75rem; }
+}

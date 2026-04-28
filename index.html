@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumière — Artisan Candle Catalog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="page-shell">
+
+  <!-- ── Sidebar / Header ─────────────────── -->
+  <aside class="site-sidebar">
+    <div class="sidebar-top">
+      <p class="sidebar-eyebrow">Artisan Collection</p>
+
+      <h1 class="site-title">
+        Lumière
+        <em>Candles</em>
+      </h1>
+
+      <p class="site-tagline">
+        Mold-cast decorative candles — each piece handcrafted in wax with an artisan's attention to form and colour.
+      </p>
+
+      <div class="sidebar-rule"></div>
+
+      <p class="filter-label">Browse by Collection</p>
+
+      <nav class="filter-bar" aria-label="Filter products">
+        <button class="filter-btn active" data-filter="all">
+          <span class="filter-dot"></span>
+          All Items
+          <span class="filter-count" id="count-all">5</span>
+        </button>
+        <button class="filter-btn" data-filter="big-rose">
+          <span class="filter-dot" style="background:#c8907a;border-color:#c8907a;"></span>
+          Big Rose
+          <span class="filter-count" id="count-big-rose">4</span>
+        </button>
+        <button class="filter-btn" data-filter="sacred">
+          <span class="filter-dot" style="background:#c9a96e;border-color:#c9a96e;"></span>
+          Sacred Figure
+          <span class="filter-count" id="count-sacred">1</span>
+        </button>
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+      <strong>Crafted with wax &amp; intention</strong>
+      Handcrafted · Mold-Cast<br>
+      Surabaya, Indonesia
+    </div>
+  </aside>
+
+  <!-- ── Main Content ──────────────────────── -->
+  <main class="catalog-main">
+    <div class="catalog-header">
+      <h2>Current Collection</h2>
+      <span class="catalog-count" id="visible-count">5 pieces</span>
+    </div>
+
+    <div class="catalog-grid" id="catalog">
+
+      <!-- Big Rose · Pink -->
+      <article class="product-card" data-category="big-rose">
+        <div class="card-image-wrap">
+          <img data-img="br_pink" alt="Big Rose candle in Pink" class="card-img" />
+          <span class="card-badge">Big Rose</span>
+          <span class="card-color-swatch" style="background:#e8a99a;"></span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-name">Rosa · Pink</h2>
+          <p class="card-desc">A blush-soft rose cast in silky wax — gentle warmth for intimate spaces.</p>
+          <div class="card-footer-line"></div>
+        </div>
+      </article>
+
+      <!-- Big Rose · Sage -->
+      <article class="product-card" data-category="big-rose">
+        <div class="card-image-wrap">
+          <img data-img="br_sage" alt="Big Rose candle in Sage" class="card-img" />
+          <span class="card-badge">Big Rose</span>
+          <span class="card-color-swatch" style="background:#a8c8b8;"></span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-name">Rosa · Sage</h2>
+          <p class="card-desc">Muted celadon petals — the tranquility of a garden at dawn.</p>
+          <div class="card-footer-line"></div>
+        </div>
+      </article>
+
+      <!-- Big Rose · Warm Sand -->
+      <article class="product-card" data-category="big-rose">
+        <div class="card-image-wrap">
+          <img data-img="br_warm_sand" alt="Big Rose candle in Warm Sand" class="card-img" />
+          <span class="card-badge">Big Rose</span>
+          <span class="card-color-swatch" style="background:#c8aa8a;"></span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-name">Rosa · Warm Sand</h2>
+          <p class="card-desc">Sun-warmed dunes softened into wax — understated and refined.</p>
+          <div class="card-footer-line"></div>
+        </div>
+      </article>
+
+      <!-- Big Rose · Velvet -->
+      <article class="product-card" data-category="big-rose">
+        <div class="card-image-wrap">
+          <img data-img="br_velvet" alt="Big Rose candle in Velvet" class="card-img" />
+          <span class="card-badge">Big Rose</span>
+          <span class="card-color-swatch" style="background:#c06090;"></span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-name">Rosa · Velvet</h2>
+          <p class="card-desc">Deep mauve richness — bold and romantic, like dusk in full bloom.</p>
+          <div class="card-footer-line"></div>
+        </div>
+      </article>
+
+      <!-- Mother Maria Praying · White -->
+      <article class="product-card" data-category="sacred">
+        <div class="card-image-wrap">
+          <img data-img="mrp_white" alt="Mother Maria Praying candle in White" class="card-img" style="object-position: center 5%;" />
+          <span class="card-badge">Sacred Figure</span>
+          <span class="card-color-swatch" style="background:#f0ece6;border-color:rgba(255,255,255,.4);"></span>
+        </div>
+        <div class="card-body">
+          <h2 class="card-name">Maria Orante · White</h2>
+          <p class="card-desc">Our Lady in eternal prayer — pure ivory wax with devotional grace.</p>
+          <div class="card-footer-line"></div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+</div><!-- .page-shell -->
+
+<script src="js/images.js"></script>
+<script src="js/catalog.js"></script>
+</body>
+</html>

@@ -240,8 +240,8 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 /* ── Product Card — Polaroid ────────────────── */
 .product-card {
-  background: #faf8f4;
-  border: none;
+  background: #ffff00; /*#faf8f4;*/
+  border: 2px solid red;
   border-radius: 3px;
   overflow: visible;
   display: flex;
